@@ -21,7 +21,7 @@ function App() {
           < CurrentDate />
 
         </div>
-        {/* <NavBar /> */}
+         {/* <NavBar />  */}
         <img
                 className='layers'
                 src={process.env.PUBLIC_URL + "/assets/layers.png"}

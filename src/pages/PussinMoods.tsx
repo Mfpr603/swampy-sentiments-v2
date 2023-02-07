@@ -2,9 +2,9 @@ import PastMoodsList from "../components/PastMoodsList";
 export default function PussinMoods() {
     return (
       <div>
-        <h1>
+        <h2>
         <PastMoodsList/>
-        </h1>
+        </h2>
       </div>
     );
   }
