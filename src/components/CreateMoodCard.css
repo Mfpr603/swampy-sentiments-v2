@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
+
+.formBackground {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(160, 143, 143, 0.7);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+  }
+
+.formContainer{
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: #D3CCA5;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.closeButton button{
+ background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.closeButton {
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+
+.submitButton button {
+    display:inline-block;
+    padding:0.3em 1em;
+    border:0.1em solid #523123;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    /* box-sizing: border-box; */
+    text-decoration:none;
+    font-family:'Chicle';
+    font-weight:300;
+    color:#523123;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.submitButton button:hover{
+    color:#D3CCA5;
+    background-color:#523123;
+    }
+
+.noteInput {
+    color:#523123;
+    font-family:'Chicle';
+
+}
+
+
+.formContainer .footer {
+    flex: 50%;
+    display: flex;
+    justify-content: flex-end;
+    /* align-items:flex-end; */
+  }
+
+.textInput input{
+    background-color: #D3CCA5;
+    border: none;
+    outline: none;
+    font-family: Lexend Peta;
+
+}
+
+
+.dateString{
+  font-size: 20px;
+  font-family: Lexend Peta;
+  color: #ffffff;
+}
+
+.moodImg{
+  max-width:  140px; 
+  max-height: 140px;
+  border-radius: 10px;
+  /* border-color: #B0C400;
+  border-width: 10px;
+  border-style: solid; */
+  margin-top: 15px;
+}
+
+.selectedMoodTitle{
+  font-family: Chicle;
+  color: #408A2E;;
+  font-size: 30px;
+}
+
+

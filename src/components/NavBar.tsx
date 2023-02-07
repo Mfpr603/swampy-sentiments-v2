@@ -7,14 +7,15 @@ export const NavBar = () => {
     <Navbar sticky="top"  expand="md">
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/portfolio">Portfolio</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="pussinmoods">PussinMoods</Link>
           </Nav>
-        {/* </Navbar.Collapse> */}
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
