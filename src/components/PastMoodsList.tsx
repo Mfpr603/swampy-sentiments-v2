@@ -37,6 +37,11 @@ const PastMoodsList = () => {
     });
   }, []);
 
+  // const sortedByDate = entries.sort((a,b) => {
+  //   return b.date - a.date;
+  // });
+  //   console.log("THIS IS THE SORTED sortedByDate)
+
   // The callback function: When there is a change to the "/entry" node, the callback function is called and 
   // passed a snapshot of the data.
 
@@ -47,7 +52,8 @@ const PastMoodsList = () => {
   // has four properties: "date", "note", "mood", and "image". The "date" property is the key of the entry, "note" is the note property of the entry, "mood" 
   // is the selectedMood property of the entry, and "image" is the selectedImg property of the entry.
 
-
+   
+  
 
   return (
     <div>
