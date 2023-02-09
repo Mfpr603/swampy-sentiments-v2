@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { database, app } from "../firebase";
+import { app } from "../firebase";
 import { getDatabase, ref, push, set } from 'firebase/database'
 import './CreateMoodCard.css'
 import CurrentDate from "./Date";
@@ -18,7 +18,7 @@ interface CreateMoodCardProps {
 
 function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCardProps): JSX.Element {
   
-  const [note, setNote] = useState(""); {
+   {
     
   const db = getDatabase(app);
   const [note, setNote] = useState("");
@@ -28,23 +28,16 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
 
   const addEntry = () => {
     const date = new Date().toDateString(); // Use the date string as the key
-    const entryRef = ref(db, `/entry/${date}`); // Use the date string as the key in the ref
+    const entryRef = ref(db, `/entry/`); // Use the date string as the key in the ref
     const entry = {
+      date,
       note,
       selectedMood,
       selectedImg
     };
-    set(entryRef, entry); // Use set instead of push to set the value at the key
+    push(entryRef, entry); // Use set instead of push to set the value at the key
   };
 
-  // const addEntry = () => {
-  //   const entryRef = ref(db, "/entry");
-  //   const entry = {
-  //     journalEntry,
-  //     date: new Date().toString(),
-  //   };
-  //   push(entryRef, entry);
-  //   };
 
 
   return (
@@ -71,10 +64,6 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
                 </div>
                 <div className = "selectedMoodTitle">{selectedMood}</div>
           </div>
-              
-             
-              
-
           <div className = "footer">
             <div className = "submitButton">
               <button type="button" onClick={addEntry}> Save </button>
@@ -82,8 +71,6 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
           </div>
           
         </form>
-        {/* <SpotifySongSelection/> */}
-        {/* <SongSelection/> */}
     </div>
   </div>
   );

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { database, app } from "../firebase";
-import { getDatabase, ref, child, get, onValue } from "firebase/database";
-// import { MoodCard }  from './types'
+import { app } from "../firebase";
+import { getDatabase, ref, onValue } from "firebase/database";
+import DeleteButton from "./Delete";
+
+
 
 const PastMoodsList = () => {
   const db = getDatabase(app);
@@ -14,6 +16,7 @@ const PastMoodsList = () => {
     onValue(entryRef, (snapshot) => {
       const data = snapshot.val();
       const entryArray = [];
+      const date = new Date().toDateString();
 
     //Use the `useEffect` hook to call the `onValue` function
     // Pass `entryRef` and an anonymous function to `onValue` as arguments
@@ -27,7 +30,7 @@ const PastMoodsList = () => {
       for (const key in data) {
         const entry = data[key];
         entryArray.push({
-          date: key,
+          key: entry.key,
           note: entry.note,
           mood: entry.selectedMood,
           image: entry.selectedImg
@@ -63,6 +66,7 @@ const PastMoodsList = () => {
           <p>Note: {entry.note}</p>
           <p>Selected Mood: {entry.mood}</p>
           <img src={entry.image.src} alt={entry.image.alt} />
+          <DeleteButton/>
         </div>
       ))}
     </div>
