@@ -16,6 +16,8 @@ export default function SwampyHome() {
             />
             <h1 className='Header'>Which layer are you feeling today?</h1>
             <Moods/>
+            
+           
         </div>
     );
   }
