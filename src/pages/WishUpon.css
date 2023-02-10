@@ -1,0 +1,22 @@
+
+
+.teardrop, .happiness, .fairygodmother, .friends{
+    max-width: 300px;
+    max-height: 200px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+.imgContainer{
+    display: flex;
+}
+
+h1{
+
+    text-align: center;
+    
+    }

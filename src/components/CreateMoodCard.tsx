@@ -24,7 +24,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
   const [biggestAccomplishment, setBiggestAccomplishment] = useState("");
   const [sleep, setSleep] = useState("");
 
-  const sleepOptions = ['slept like a baby', 'good', 'meh', 'bad', 'awful'];
+  const sleepOptions = [1, 2, 3, 4, 5];
 
 
 
@@ -68,6 +68,12 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
           <div className= "Date">
             <CurrentDate />
           </div>
+          <div className= "selectedMood">
+                <div className="moodImgBox">
+                  <img className = 'moodImg' src={selectedImg.src} alt={selectedImg.alt} />
+                </div>
+                <div className = "selectedMoodTitle">{selectedMood}</div>
+          </div>
 
           <div className= "noteInput">
             <h1 >Your Note:</h1>
@@ -83,14 +89,9 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
               <input type="text"  placeholder="Biggest Accomplishment" onChange={handleSubmitAccomplishment}/>
           </div>
 
-          <div className= "selectedMood">
-                <div className="moodImgBox">
-                  <img className = 'moodImg' src={selectedImg.src} alt={selectedImg.alt} />
-                </div>
-                <div className = "selectedMoodTitle">{selectedMood}</div>
-          </div>
+          
           <div className= "sleepInput">
-              <h1 >How did you sleep?</h1>
+              <h1 >Sleep Quality:</h1>
               <select onChange={handleSleepChange} value={sleep}>
               <option value="">Please select...</option>
               {sleepOptions.map((option, index) => (
