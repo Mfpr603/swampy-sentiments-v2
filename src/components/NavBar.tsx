@@ -9,10 +9,14 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Link to="/">Swampy Home</Link>
-            {/* <Link to="/about">About</Link>
-            <Link to="/portfolio">Portfolio</Link>
-            <Link to="/contact">Contact</Link> */}
+            <Link to="/">   
+              
+                    <img
+                    className='shrekHead'
+                    src={process.env.PUBLIC_URL + "/assets/shrekHead.png"}
+                    alt="shrekHead"
+                    />
+     </Link>
             <Link to="pussinmoods">Puss in Moods</Link>
             <Link to="WishUponWellness">Wish Upon Wellness</Link>
           </Nav>

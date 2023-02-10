@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { app } from "../firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
-
+import './PastMoodsList.css'
 
 
 const PastMoodsList = () => {
@@ -36,18 +36,20 @@ const PastMoodsList = () => {
   return (
     <div>
       {entries.map((entry, index) => (
-        <div key={index}>
-          <p>Date: {entry.date}</p>
-          <p>Note: {entry.note}</p>
-          <p>Selected Mood: {entry.mood}</p>
-          <img src={entry.image.src} alt={entry.image.alt} />
-          <p>Biggest Accomplishment: {entry.BiggestAccomplishment}</p>
-          <p>Sleep Quality: {entry.sleep}</p>
-
-        </div>
+        <React.Fragment key={index}>
+          <div className="formContainer">
+            <p>Date: {entry.date}</p>
+            <p>Note: {entry.note}</p>
+            <p>Selected Mood: {entry.mood}</p>
+            <img className="moodImg" src={entry.image.src} alt={entry.image.alt} />
+            <p>Biggest Accomplishment: {entry.BiggestAccomplishment}</p>
+            <p>Sleep Quality: {entry.sleep}</p>
+          </div>
+        </React.Fragment>
       ))}
     </div>
   );
+  
 };
 
 export default PastMoodsList; 

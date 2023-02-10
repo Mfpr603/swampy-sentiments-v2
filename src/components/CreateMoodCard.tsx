@@ -20,10 +20,10 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
    {
     
   const db = getDatabase(app);
+  
   const [note, setNote] = useState("");
   const [biggestAccomplishment, setBiggestAccomplishment] = useState("");
   const [sleep, setSleep] = useState("");
-
   const sleepOptions = [1, 2, 3, 4, 5];
 
 
@@ -60,7 +60,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
 
   return (
   <div className="formBackground">
-     <div className="formContainer">
+     <div className="CreateFormContainer">
         <form>
           <div className= "closeButton">
             <button type="button" onClick={() => closeModal(false)}>X</button>

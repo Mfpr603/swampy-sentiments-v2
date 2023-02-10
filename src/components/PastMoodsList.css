@@ -1,0 +1,19 @@
+.formContainer{
+    width: 700px;
+    height: 400px;
+    border-radius: 12px;
+    background-color: #B0C400;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.moodImg{
+max-width:  140px; 
+  max-height: 140px;
+  border-radius: 10px;
+}
+
