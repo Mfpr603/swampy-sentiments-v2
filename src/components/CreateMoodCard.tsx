@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { app } from "../firebase";
-import { getDatabase, ref, push } from 'firebase/database'
+import { getDatabase, ref, push} from 'firebase/database'
 import './CreateMoodCard.css'
 import CurrentDate from "./Date";
 
@@ -21,49 +21,73 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
     
   const db = getDatabase(app);
   
-  const [note, setNote] = useState("");
-  const [biggestAccomplishment, setBiggestAccomplishment] = useState("");
+  // const [note, setNote] = useState("");
+  // const [biggestAccomplishment, setBiggestAccomplishment] = useState("");
   const [sleep, setSleep] = useState("");
-  const [grateful, setGrateful] = useState("");
+
   const sleepOptions = [1, 2, 3, 4, 5];
 
+  const [formData, setFormData] = useState({
+    note: "",
+    biggestAccomplishment: "",
+    sleep: 0
+  })
+
+  const handleChange = (e: any) => {
+    setFormData(prevData => {
+      return {
+        ...prevData,
+        [e.target.name]: e.target.value
+      }
+    })
+  }
 
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNote(e.target.value);
-  };
 
-  const handleSubmitAccomplishment = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBiggestAccomplishment(e.target.value);
-  };
+  // const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setNote(e.target.value);
+    
+  // };
+
+  // const handleSubmitAccomplishment = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setBiggestAccomplishment(e.target.value);
+  // };
 
   const handleSleepChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSleep(event.target.value);
+    setFormData(prevData => {
+      return {
+        ...prevData,
+        sleep: Number(event.target.value)
+      }
+    });
   };
-
-  const handleGrateful = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setGrateful(event.target.value);
-  };
-  
   
 
 
   const addEntry = () => {
     const date = new Date().toDateString(); // Use the date string as the key
     const entryRef = ref(db, `/entry/`); // Use the date string as the key in the ref
+    // const entry = {
+      
+    //   date,
+    //   note,
+    //   selectedMood,
+    //   selectedImg,
+    //   biggestAccomplishment,
+    //   sleep
+    // };
     const entry = {
+      ...formData,
       date,
-      note,
-      selectedMood,
       selectedImg,
-      biggestAccomplishment,
-      sleep,
-      grateful
-    };
-    push(entryRef, entry); // Use set instead of push to set the value at the key
+      selectedMood
+    }
+    var newPostRef = push(entryRef, entry);
+    var postID = newPostRef.key;
+    console.log(postID); // Use set instead of push to set the value at the key
   };
 
-
+console.log(formData)
 
   return (
   <div className="formBackground">
@@ -86,27 +110,20 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
             <h1 >Your Note:</h1>
           </div>
           <div className= "textInput">
-              <input type="text"  placeholder="Add a note..." onChange={handleSubmit} />
+              <input type="text"  placeholder="Add a note..." name="note" value={formData.note} onChange={handleChange} />
           </div>
 
           <div className= "accomplishmentInput">
             <h1 >Biggest Accomplishment:</h1>
           </div>
           <div className= "textInput">
-              <input type="text"  placeholder="Biggest Accomplishment" onChange={handleSubmitAccomplishment}/>
-          </div>
-
-          <div className= "gratefulInput">
-            <h1 >I am grateful for:</h1>
-          </div>
-          <div className= "textInput">
-              <input type="text"  placeholder="Grateful for" onChange={handleGrateful}/>
+              <input type="text"  placeholder="Biggest Accomplishment" name="biggestAccomplishment" value={formData.biggestAccomplishment} onChange={handleChange}/>
           </div>
 
           
           <div className= "sleepInput">
               <h1 >Sleep Quality:</h1>
-              <select onChange={handleSleepChange} value={sleep}>
+              <select onChange={handleSleepChange} value={formData.sleep}>
               <option value="">Please select...</option>
               {sleepOptions.map((option, index) => (
               <option key={index} value={option}>{option}</option>
@@ -117,7 +134,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
 
           <div className = "footer">
             <div className = "submitButton">
-              <button type="button" onClick={addEntry}> Save </button>
+              <button type="button" onClick={addEntry} > Save </button>
             </div>
           </div>
           
