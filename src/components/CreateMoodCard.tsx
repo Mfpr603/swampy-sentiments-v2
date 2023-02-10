@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { app } from "../firebase";
-import { getDatabase, ref, push, set } from 'firebase/database'
+import { getDatabase, ref, push } from 'firebase/database'
 import './CreateMoodCard.css'
 import CurrentDate from "./Date";
 
@@ -24,6 +24,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
   const [note, setNote] = useState("");
   const [biggestAccomplishment, setBiggestAccomplishment] = useState("");
   const [sleep, setSleep] = useState("");
+  const [grateful, setGrateful] = useState("");
   const sleepOptions = [1, 2, 3, 4, 5];
 
 
@@ -39,6 +40,11 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
   const handleSleepChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSleep(event.target.value);
   };
+
+  const handleGrateful = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setGrateful(event.target.value);
+  };
+  
   
 
 
@@ -51,7 +57,8 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
       selectedMood,
       selectedImg,
       biggestAccomplishment,
-      sleep
+      sleep,
+      grateful
     };
     push(entryRef, entry); // Use set instead of push to set the value at the key
   };
@@ -87,6 +94,13 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
           </div>
           <div className= "textInput">
               <input type="text"  placeholder="Biggest Accomplishment" onChange={handleSubmitAccomplishment}/>
+          </div>
+
+          <div className= "gratefulInput">
+            <h1 >I am grateful for:</h1>
+          </div>
+          <div className= "textInput">
+              <input type="text"  placeholder="Grateful for" onChange={handleGrateful}/>
           </div>
 
           

@@ -1,6 +1,7 @@
 import CurrentDate from "../components/Date";
 import Moods from "../components/Moods";
 
+
 export default function SwampyHome() {
     return (
     <div>
@@ -15,8 +16,7 @@ export default function SwampyHome() {
                 alt="Ogres have layers"
             />
             <h1 className='Header'>Which layer are you feeling today?</h1>
-            <Moods/>
-            
+            <Moods/>            
            
         </div>
     );
