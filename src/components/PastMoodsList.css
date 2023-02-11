@@ -1,4 +1,5 @@
-.formContainer{
+.entryFormContainer{
+  
     width: 700px;
     height: 400px;
     border-radius: 12px;
@@ -17,3 +18,39 @@ max-width:  140px;
   border-radius: 10px;
 }
 
+
+.moodSelectionContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content:right;
+}
+
+
+.deleteButton button {
+  display:inline-block;
+  padding:0.7em 1.5em;
+  border:0.1em solid #523123;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-size: 15px;
+  font-family:'Chicle';
+  font-weight:300;
+  color:#523123;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+
+.deleteButton button:hover{
+  color:#D3CCA5;
+  background-color:#523123;
+  }
+
+
+.cardsContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

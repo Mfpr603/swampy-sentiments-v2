@@ -30,6 +30,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
   const [formData, setFormData] = useState({
     note: "",
     biggestAccomplishment: "",
+    grateful:"",
     sleep: 0
   })
 
@@ -118,6 +119,13 @@ console.log(formData)
           </div>
           <div className= "textInput">
               <input type="text"  placeholder="Biggest Accomplishment" name="biggestAccomplishment" value={formData.biggestAccomplishment} onChange={handleChange}/>
+          </div>
+
+          <div className= "gratefulInput">
+            <h1 >I'm grateful for:</h1>
+          </div>
+          <div className= "textInput">
+              <input type="text"  placeholder="Grateful for" name="grateful" value={formData.grateful} onChange={handleChange}/>
           </div>
 
           

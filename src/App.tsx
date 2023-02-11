@@ -11,14 +11,21 @@ import GingysGrumpometer from './pages/GingysGrumpometer';
 function App() {
   return (
     <div className="App">
-       <NavBar />
+      <div className="navBar">
+        <NavBar />
+        </div>
+       
       
-        <Routes>
-          <Route path="/" element={<SwampyHome/>} />
-          <Route path="/WishUponWellness" element={<WishUpon/>} />
-          <Route path='/pussinmoods' element={<PussinMoods />} />
-          <Route path='/gingysgrumpometer' element={<GingysGrumpometer />} />
-        </Routes>
+
+          <Routes>
+            <Route path="/" element={<SwampyHome/>} />
+            <Route path="/WishUponWellness" element={<WishUpon/>} />
+            <Route path='/pussinmoods' element={<PussinMoods />} />
+            <Route path='/gingysgrumpometer' element={<GingysGrumpometer />} />
+          </Routes>
+     
+      
+
 
     </div>
 

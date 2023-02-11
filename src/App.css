@@ -38,3 +38,8 @@
   letter-spacing: 5px;
 }
 
+.navBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

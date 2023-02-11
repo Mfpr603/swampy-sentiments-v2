@@ -1,82 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { Pie } from 'react-chartjs-2';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 import { app } from "../firebase";
-import 'chart.js';
 import { getDatabase, ref, onValue } from "firebase/database";
-
-
-interface Mood {
-  selectedMood: string;
-  note?: string;
-  selectedImg?: string;
-  [key: string]: any;
-}
+import './MoodDistribution.css'
 
 const MoodDistributionChart = () => {
-  const db = getDatabase(app);
   const [moodData, setMoodData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-    
-    const entryRef = ref(db, "/entry");      
-    onValue(entryRef, (snapshot) => {
+      const db = getDatabase(app);
+      const moodRef = ref(db, `/entry/`);
+
+      onValue(moodRef, (snapshot) => {
         const data = snapshot.val();
-        const moodCount: { [key: string]: number } = {};
-        Object.values(data).forEach((value: unknown) => {
-            if (value && typeof value === 'object') {
-              const mood = value as Mood;
-          if (!moodCount[mood.selectedMood]) {
-            moodCount[mood.selectedMood] = 0;
-          }
-          moodCount[mood.selectedMood] += 1;
-        }});
+        console.log("Data:", data);
+        const moodArray = [];
+        for (const key in data) {
+          const entry = data[key];
+          console.log(key);
+          moodArray.push({ mood: entry.selectedMood });
+        }
+        const moodCount = moodArray.reduce((acc, cur) => {
+          acc[cur.mood] = (acc[cur.mood] || 0) + 1;
+          return acc;
+        }, {} as {[key: string]: number});
         setMoodData(moodCount);
       });
     };
     fetchData();
+  }, []);
 
-  });
-
-  
-
-
-  const chartData = {
-    labels: Object.keys(moodData) as string[],
-    datasets: [
-      {
-        data: Object.values(moodData) as number[],
-        backgroundColor: [
-          '#FF6384',
-          '#36A2EB',
-          '#FFCE56',
-          '#CC6699',
-          '#99CC66',
-        ],
-        hoverBackgroundColor: [
-          '#FF6384',
-          '#36A2EB',
-          '#FFCE56',
-          '#CC6699',
-          '#99CC66',
-        ],
-      },
-    ],
+  const chartOptions = {
+    
+    chart: {
+      type: 'pie',
+      styledMode: true
+    },
+    title: {
+      text: 'Mood Distribution'
+    },
+    colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'], // Set specific colors for each mood
+    series: [{
+      name: 'Mood',
+      data: Object.entries(moodData).map(([mood, count]) => ({name: mood, y: count}))
+    }]
   };
-
-
-//   const chartId = `chart-${Date.now()}-${Math.floor(Math.random() * 100)}`;
-
-//   const chart = new Chart(chartId, {
-//     type: 'bar',
-//     data: chartData,
-//   });
-
-//   chart.destroy();
 
   return (
     <div>
-      <Pie data={chartData} />
+      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
     </div>
   );
 };
