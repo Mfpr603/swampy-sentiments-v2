@@ -49,9 +49,7 @@ function UserAuth() {
         }
     };
 
-    const logout = async () => {
-        await signOut(auth);
-    };
+  
 
     return (
         <div className="App">
@@ -91,12 +89,7 @@ function UserAuth() {
                 <button onClick={login}> Login</button>
             </div>
     
-            <div>
-                <h4> User Logged In: </h4>
-                {user && user.email ? user.email : null}
-
-                <button onClick={logout}> Sign Out </button>
-            </div>
+           
         </div>
     );
 }

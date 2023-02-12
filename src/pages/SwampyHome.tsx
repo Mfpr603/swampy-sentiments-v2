@@ -1,10 +1,12 @@
 import CurrentDate from "../components/Date";
 import Moods from "../components/Moods";
+import Logout from "../components/Logout";
 
 
 export default function SwampyHome() {
     return (
     <div>
+      <Logout/>
         <h1 className='Swampy'>Swampy Sentiments</h1>
         <div className='currentDate'>
           < CurrentDate />
