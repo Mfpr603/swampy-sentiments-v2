@@ -7,6 +7,9 @@ import PussinMoods from './pages/PussinMoods';
 import SwampyHome from './pages/SwampyHome';
 import WishUpon from './pages/WishUpon';
 import GingysGrumpometer from './pages/GingysGrumpometer';
+import LoginPage from './pages/LoginPage';
+
+
 
 function App() {
   return (
@@ -22,6 +25,7 @@ function App() {
             <Route path="/WishUponWellness" element={<WishUpon/>} />
             <Route path='/pussinmoods' element={<PussinMoods />} />
             <Route path='/gingysgrumpometer' element={<GingysGrumpometer />} />
+            <Route path="Login" element={<LoginPage/>} />
           </Routes>
      
       

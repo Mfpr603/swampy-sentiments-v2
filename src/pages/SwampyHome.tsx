@@ -8,6 +8,7 @@ export default function SwampyHome() {
         <h1 className='Swampy'>Swampy Sentiments</h1>
         <div className='currentDate'>
           < CurrentDate />
+       
 
         </div>
         <img

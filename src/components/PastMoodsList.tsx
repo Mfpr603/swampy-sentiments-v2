@@ -5,10 +5,11 @@ import './PastMoodsList.css'
 import  DeleteButton from './Delete'
 
 
+
 const PastMoodsList = () => {
   const db = getDatabase(app);
   const [entries, setEntries] = useState<any[]>([]);
-
+  
 
   
   useEffect(() => {
@@ -59,6 +60,7 @@ const PastMoodsList = () => {
             {entry.sleep && <p>Sleep Quality: {entry.sleep}</p>}
               
             <button className = "deleteButton"> <DeleteButton postID={entry.id}/> </button>
+           
             </div>
            </div>
         </React.Fragment>

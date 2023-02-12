@@ -9,14 +9,11 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Link to="/">   Swampy Home
-              
-                    <img
+            <Link to="/">   Swampy Home <img
                     className='shrekHead'
                     src={process.env.PUBLIC_URL + "/assets/shrekHead.png"}
                     alt="shrekHead"
-                    />
-                    
+                    />          
      </Link>
             <Link to="pussinmoods">Puss in Moods <img
                     className='pussInMoods'
@@ -34,6 +31,12 @@ export const NavBar = () => {
                     src={process.env.PUBLIC_URL + "/assets/gingy.png"}
                     alt="gingy"
                     /></Link>
+            <Link to="Login">   Login           
+     </Link>
+            
+
+            
+
           </Nav>
         </Navbar.Collapse>
       </Container>
