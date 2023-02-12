@@ -27,6 +27,7 @@ const PastMoodsList = () => {
             mood: entry.selectedMood,
             image: entry.selectedImg,
             BiggestAccomplishment: entry.biggestAccomplishment,
+            Grateful: entry.grateful,
             sleep: entry.sleep
           });
         }
@@ -53,6 +54,7 @@ const PastMoodsList = () => {
 
               {entry.note && <p>Note: {entry.note}</p>}
               {entry.BiggestAccomplishment && <p>Biggest Accomplishment: {entry.BiggestAccomplishment}</p>}
+              {entry.Grateful && <p>I'm grateful for: {entry.Grateful}</p>}
               {entry.sleep && <p>Sleep Quality: {entry.sleep}</p>}
               
               {entry.id && <button className="deleteButton">

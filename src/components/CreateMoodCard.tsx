@@ -30,7 +30,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
   const [formData, setFormData] = useState({
     note: "",
     biggestAccomplishment: "",
-    grateful:"",
+    grateful: "",
     sleep: 0
   })
 
