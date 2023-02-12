@@ -21,7 +21,7 @@ export default function SwampyHome({ displayName }: { displayName: string }) {
             />
 
             <h1 className='greetingHeader'>Hey, {displayName}!</h1>
-
+          
             <h1 className='Header'>Which layer are you feeling today?</h1>
             <Moods/>            
            
