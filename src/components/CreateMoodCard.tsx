@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { app } from "../firebase";
+import { app, auth} from "../firebase";
 import { getDatabase, ref, push} from 'firebase/database'
 import './CreateMoodCard.css'
 import CurrentDate from "./Date";
@@ -67,16 +67,13 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
 
   const addEntry = () => {
     const date = new Date().toDateString(); // Use the date string as the key
-    const entryRef = ref(db, `/entry/`); // Use the date string as the key in the ref
-    // const entry = {
-      
-    //   date,
-    //   note,
-    //   selectedMood,
-    //   selectedImg,
-    //   biggestAccomplishment,
-    //   sleep
-    // };
+    const user = auth.currentUser;
+    if (user) {
+      const uid = user.uid;
+    const entryRef = ref(db, `/entry/${uid}`);
+    
+    // Use the date string as the key in the ref
+   
     const entry = {
       ...formData,
       date,
@@ -86,7 +83,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
     var newPostRef = push(entryRef, entry);
     var postID = newPostRef.key;
     console.log(postID); // Use set instead of push to set the value at the key
-  };
+  };}
 
 console.log(formData)
 

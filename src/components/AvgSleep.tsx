@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { app } from "../firebase";
+import { app, auth } from "../firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 const AvgSleep = () => {
@@ -8,7 +8,12 @@ const AvgSleep = () => {
     useEffect(() => {
       const fetchData = async () => {
         const db = getDatabase(app);
-        const sleepRef = ref(db, `/entry/`);
+        const user = auth.currentUser;
+          if (user) {
+        const uid = user.uid;
+
+        const sleepRef = ref(db, `/entry/${uid}`);
+        
   
         onValue(sleepRef, (snapshot) => {
           const data = snapshot.val();
@@ -27,7 +32,7 @@ const AvgSleep = () => {
           console.log("Average Sleep:", averageSleep);
           setSleepData({ averageSleep });
         });
-      };
+      };}
   
       fetchData();
     }, []);
