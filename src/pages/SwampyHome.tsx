@@ -3,7 +3,8 @@ import Moods from "../components/Moods";
 import Logout from "../components/Logout";
 
 
-export default function SwampyHome() {
+
+export default function SwampyHome({ displayName }: { displayName: string }) {
     return (
     <div>
       <Logout/>
@@ -18,6 +19,9 @@ export default function SwampyHome() {
                 src={process.env.PUBLIC_URL + "/assets/layers.png"}
                 alt="Ogres have layers"
             />
+
+            <h1 className='greetingHeader'>Hey, {displayName}!</h1>
+
             <h1 className='Header'>Which layer are you feeling today?</h1>
             <Moods/>            
            

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword, onAuthStateChanged, User, signOut, signInWithEmailAndPassword } from 'firebase/auth';  
+import { createUserWithEmailAndPassword, onAuthStateChanged, User, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';  
 import { auth } from '../firebase';
 
 function UserAuth() {
@@ -8,6 +8,7 @@ function UserAuth() {
     const [registerPassword, setRegisterPassword] = useState("");
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
+    const [registerDisplayName, setRegisterDisplayName] = useState<string>("");
 
     const [user, setUser] = useState<User | null>(null);
 
@@ -25,14 +26,17 @@ function UserAuth() {
 
     const register = async () => {
         try{
-            const user = await createUserWithEmailAndPassword( 
+            const userCredential = await createUserWithEmailAndPassword( 
                 auth, 
                 registerEmail, 
                 registerPassword 
             );
+            const user = userCredential.user;
+            await updateProfile(user, {
+                displayName: registerDisplayName});
             console.log(user);
         } catch (error) {
-            console.log((error as Error).message); 
+            console.log((error as Error).message);
         }
     }; 
 
@@ -49,8 +53,6 @@ function UserAuth() {
         }
     };
 
-  
-
     return (
         <div className="App">
             <div>
@@ -65,6 +67,12 @@ function UserAuth() {
                     placeholder="Password..."
                     onChange={(event) => {
                         setRegisterPassword(event.target.value);
+                    }}
+                />
+                <input
+                    placeholder="Display Name..." // add a display name input field
+                    onChange={(event) => {
+                        setRegisterDisplayName(event.target.value);
                     }}
                 />
     

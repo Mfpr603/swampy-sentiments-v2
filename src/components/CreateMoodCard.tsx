@@ -23,9 +23,8 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
   
   // const [note, setNote] = useState("");
   // const [biggestAccomplishment, setBiggestAccomplishment] = useState("");
-  const [sleep, setSleep] = useState("");
 
-  const sleepOptions = [1, 2, 3, 4, 5];
+  const sleepOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const [formData, setFormData] = useState({
     note: "",

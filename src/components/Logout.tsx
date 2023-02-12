@@ -27,7 +27,7 @@ const Logout = () => {
   return (
     <div>
       <h4>User Logged In:</h4>
-      {user && user.email ? user.email : null}
+      {user && user.displayName ? user.displayName : null}
       <button onClick={handleLogout}>Sign Out</button>
     </div>
   );
