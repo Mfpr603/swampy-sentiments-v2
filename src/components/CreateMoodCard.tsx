@@ -69,10 +69,10 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
     }
     var newPostRef = push(entryRef, entry);
     var postID = newPostRef.key;
-    console.log(postID); // Use set instead of push to set the value at the key
+    // console.log(postID); // Use set instead of push to set the value at the key
   };}
 
-console.log(formData)
+// console.log(formData)
 
   return (
   <div className="formBackground">

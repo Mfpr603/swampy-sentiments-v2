@@ -18,7 +18,7 @@ const PastMoodsList = () => {
         const data = snapshot.val();
         const entryArray = [];
 
-        for (const key in data) {
+        for (const key in data) { 
           const entry = data[key];
           entryArray.push({
             id: key, 
@@ -31,10 +31,12 @@ const PastMoodsList = () => {
             sleep: entry.sleep
           });
         }
-
-        setEntries(entryArray);
+        const reversedEntryArray = entryArray.reverse();
+        setEntries(reversedEntryArray);
+        // console.log("reversed order", reversedEntryArray)
       });
     }
+    
   }, []);
 
   return (
