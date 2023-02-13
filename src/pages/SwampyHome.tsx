@@ -11,7 +11,7 @@ export default function SwampyHome({ displayName }: { displayName: string }) {
         <h1 className='Swampy'>Swampy Sentiments</h1>
         <div className='currentDate'>
           < CurrentDate />
-       
+       {/* random comment lol  */}
 
         </div>
         <img
