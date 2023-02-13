@@ -28,7 +28,7 @@ const AvgSleep = () => {
             return acc + cur.sleep;
           }, 0);
           console.log("Sleep Count:", sleepCount);
-          const averageSleep = sleepCount / sleepArray.length;
+          const averageSleep = Number((sleepCount / sleepArray.length).toFixed(2));
           console.log("Average Sleep:", averageSleep);
           setSleepData({ averageSleep });
         });

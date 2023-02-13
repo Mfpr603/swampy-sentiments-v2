@@ -20,7 +20,7 @@ export default function SwampyHome({ displayName }: { displayName: string }) {
                 alt="Ogres have layers"
             />
 
-            <h1 className='greetingHeader'>Hey, {displayName}!</h1>
+            <h1 className='greetingHeader'>Hey {displayName}!</h1>
 
             <h1 className='Header'>Which layer are you feeling today?</h1>
             <Moods/>            

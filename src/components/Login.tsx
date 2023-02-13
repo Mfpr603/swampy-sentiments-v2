@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged, User, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';  
 import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
+
 
 function UserAuth() {
 
@@ -9,6 +11,8 @@ function UserAuth() {
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     const [registerDisplayName, setRegisterDisplayName] = useState<string>("");
+    const navigate = useNavigate();
+
 
     const [user, setUser] = useState<User | null>(null);
 
@@ -48,6 +52,7 @@ function UserAuth() {
                 loginPassword 
             );
             console.log(user);
+            navigate('/app');
         } catch (error) {
             console.log((error as Error).message);
         }
