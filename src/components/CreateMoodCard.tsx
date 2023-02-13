@@ -20,7 +20,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
    {
     
   const db = getDatabase(app);
-  
+
   // const [note, setNote] = useState("");
   // const [biggestAccomplishment, setBiggestAccomplishment] = useState("");
 
@@ -42,17 +42,6 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
     })
   }
 
-
-
-  // const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setNote(e.target.value);
-    
-  // };
-
-  // const handleSubmitAccomplishment = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setBiggestAccomplishment(e.target.value);
-  // };
-
   const handleSleepChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFormData(prevData => {
       return {
@@ -71,8 +60,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
       const uid = user.uid;
     const entryRef = ref(db, `/entry/${uid}`);
     
-    // Use the date string as the key in the ref
-   
+    
     const entry = {
       ...formData,
       date,
