@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { User, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import { useNavigate } from 'react-router-dom';
+
 
 const Logout = () => {
   const [user, setUser] = useState<User | null>(null);
+  const navigate = useNavigate();
 
   const handleAuthChange = (user: User | null) => {
     if (user) {
@@ -22,7 +25,9 @@ const Logout = () => {
 
   const handleLogout = async () => {
     await signOut(auth);
+    navigate("/");
   };
+  
 
   return (
     <div>
