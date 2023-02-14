@@ -1,7 +1,6 @@
 import MoodDistributionChart from '../components/MoodDistribution';
 import AvgSleep from '../components/AvgSleep';
 
-
 export default function GingysGrumpometer() {
     return (
       <div>

@@ -1,4 +1,5 @@
 import PastMoodsList from "../components/PastMoodsList";
+
 export default function PussinMoods() {
     return (
       <div>

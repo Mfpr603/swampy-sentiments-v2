@@ -13,7 +13,6 @@ import { auth } from "./firebase";
 import { User } from 'firebase/auth';
 
 
-
 function App() {
   const [user, setUser] = useState<User | null>(null);
 
@@ -29,9 +28,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className="navBar">
-        <NavBar />
-      </div>
+      {user !== null && (
+        <div className="navBar">
+          <NavBar />
+        </div>
+      )}
 
       <Routes>
         <Route path="/" element={<LoginPage />} />
@@ -43,4 +44,5 @@ function App() {
     </div>
   );
 }
+
 export default App; 
