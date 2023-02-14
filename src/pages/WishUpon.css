@@ -11,9 +11,11 @@
 .happinessHeader,.notAlone{
   color:#523123;
   font-family:'Chicle';
-  
-}
 
+}
+.mentalHealth {
+  font-family: Lexend Peta;
+}
 
 .imgContainer{
     display: flex;

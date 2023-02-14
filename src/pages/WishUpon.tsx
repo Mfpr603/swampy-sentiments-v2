@@ -29,14 +29,14 @@ export default function WishUpon() {
 
         </div>
 
-      <p>
+      <p className='mentalHealth'>
         BetterHelp: <a href="url">https://www.betterhelp.com/</a>
       </p>
-      <p>
+      <p className='mentalHealth'>
         Talkiatry: <a href="url">https://www.talkiatry.com/</a>
       </p>
 
-      <p>
+      <p className='mentalHealth'>
       In crisis and need to talk to someone?
       Text HOME to 741741 to reach a volunteer Crisis Counselor.
 
