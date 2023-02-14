@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged, User, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';  
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import { Form, Button, InputGroup, FormControl } from 'react-bootstrap';
+import './Login.css'
+
 
 
 function UserAuth() {
@@ -11,6 +14,7 @@ function UserAuth() {
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     const [registerDisplayName, setRegisterDisplayName] = useState<string>("");
+    const [showLogin, setShowLogin] = useState(false);
     const navigate = useNavigate();
 
 
@@ -60,57 +64,84 @@ function UserAuth() {
             console.log((error as Error).message);
         }
     };
-
+    
     return (
         <div className="App">
-            <div>
-                <h3> Register User </h3>
-                <input
+          <Form>
+            <h3> {showLogin ? "Login" : "Register User"} </h3>
+            {!showLogin && (
+              <>
+                <InputGroup className="mb-3">
+                  <FormControl
                     placeholder="Email..."
+                    value={registerEmail}
                     onChange={(event) => {
-                        setRegisterEmail(event.target.value);
+                      setRegisterEmail(event.target.value);
                     }}
-                />
-                <input type="password"
-                    id="password"
-                    placeholder="Password..."
-                    onChange={(event) => {
-                        setRegisterPassword(event.target.value);
-                    }}
-                />
-                <input
-                    placeholder="Display Name..." // add a display name input field
-                    onChange={(event) => {
-                        setRegisterDisplayName(event.target.value);
-                    }}
-                />
-    
-                <button onClick={register}> Create User</button>
-            </div>
-    
-            <div>
-                <h3> Login </h3>
-                <input
-                    placeholder="Email..."
-                    onChange={(event) => {
-                        setLoginEmail(event.target.value);
-                    }}
-                />
-                <input
+                  />
+                </InputGroup>
+                <InputGroup className="mb-3">
+                  <FormControl
                     type="password"
-                    id="password"
                     placeholder="Password..."
+                    value={registerPassword}
                     onChange={(event) => {
-                        setLoginPassword(event.target.value);
+                      setRegisterPassword(event.target.value);
                     }}
-                />
-    
-                <button onClick={login}> Login</button>
-            </div>
-    
-           
+                  />
+                </InputGroup>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    placeholder="Display Name..."
+                    value={registerDisplayName}
+                    onChange={(event) => {
+                      setRegisterDisplayName(event.target.value);
+                    }}
+                  />
+                </InputGroup>
+                <Button variant="primary" onClick={register}>
+                  Create User
+                </Button>
+              </>
+            )}
+            {showLogin && (
+              <>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    placeholder="Email..."
+                    value={loginEmail}
+                    onChange={(event) => {
+                      setLoginEmail(event.target.value);
+                    }}
+                  />
+                </InputGroup>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    type="password"
+                    placeholder="Password..."
+                    value={loginPassword}
+                    onChange={(event) => {
+                      setLoginPassword(event.target.value);
+                    }}
+                  />
+                </InputGroup>
+                <Button variant="primary" onClick={login}>
+                  Login
+                </Button>
+              </>
+            )}
+          </Form>
+          <Button
+            variant="link"
+            className="mt-3"
+            onClick={() => setShowLogin(!showLogin)}
+          >
+            {showLogin ? "Switch to Register" : "Switch to Login"}
+          </Button>
         </div>
-    );
-}
+      );
+                }    
+           
     
 export default UserAuth;
+    
