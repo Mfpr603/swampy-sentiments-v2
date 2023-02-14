@@ -1,9 +1,9 @@
-import Register from '../components/Login'
+import UserAuth from '../components/Login'
 
 export default function LoginPage() {
     return (
       <div>
-        <Register/>
+        <UserAuth/>
       </div>
     );
   }

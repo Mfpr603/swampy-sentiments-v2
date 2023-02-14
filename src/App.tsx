@@ -14,9 +14,7 @@ import { User } from 'firebase/auth';
 
 
 
-
 function App() {
-
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -33,24 +31,16 @@ function App() {
     <div className="App">
       <div className="navBar">
         <NavBar />
-        </div>
-       
-      
+      </div>
 
-          <Routes>
-            <Route path="/" element={<SwampyHome displayName={user ? user.displayName || "" : ""} />} />
-            <Route path="/WishUponWellness" element={<WishUpon/>} />
-            <Route path='/pussinmoods' element={<PussinMoods />} />
-            <Route path='/gingysgrumpometer' element={<GingysGrumpometer />} />
-            <Route path="Login" element={<LoginPage/>} />
-          </Routes>
-     
-      
-
-
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/Home" element={<SwampyHome displayName={user ? user.displayName || "" : ""} />} />
+        <Route path="/WishUponWellness" element={<WishUpon />} />
+        <Route path="/pussinmoods" element={<PussinMoods />} />
+        <Route path="/gingysgrumpometer" element={<GingysGrumpometer />} />
+      </Routes>
     </div>
-
   );
 }
-
-export default App;
+export default App; 

@@ -9,7 +9,7 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Link to="/">   Swampy Home <img
+            <Link to="/">   Login <img
                     className='shrekHead'
                     src={process.env.PUBLIC_URL + "/assets/shrekHead.png"}
                     alt="shrekHead"
@@ -30,8 +30,8 @@ export const NavBar = () => {
                     className='gingy'
                     src={process.env.PUBLIC_URL + "/assets/gingy.png"}
                     alt="gingy"
-                    /></Link>
-            <Link to="Login">   Login           
+                    />
+         
      </Link>
             
 
