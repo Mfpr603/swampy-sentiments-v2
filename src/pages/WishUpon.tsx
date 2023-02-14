@@ -1,10 +1,11 @@
 import './WishUpon.css'
+import React from 'react';
 
 
 export default function WishUpon() {
     return (
       <div>
-        <h1>Happiness is Just a teardrop away</h1>
+        <h1 className='happinessHeader'>Happiness is Just a teardrop away</h1>
 
         <div className = "imgContainer">
         <img
@@ -42,7 +43,7 @@ export default function WishUpon() {
 
       </p>
 
-      <h1>You're not alone</h1>
+      <h1 className='notAlone'>You're not alone</h1>
       <img
                     className='friends'
                     src={process.env.PUBLIC_URL + "/assets/friends.png"}

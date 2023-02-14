@@ -8,7 +8,11 @@
   margin-right: auto;
 }
 
-
+.happinessHeader,.notAlone{
+  color:#523123;
+  font-family:'Chicle';
+  
+}
 
 
 .imgContainer{
@@ -20,3 +24,4 @@ h1{
     text-align: center;
     
     }
+  
