@@ -1,3 +1,10 @@
+# Application description
+This Application is a shrek themed mood tracker website app. The app allows you to create entries everyday by creating an account. Once logged in there is a guided mood entry that allows you to reflect in a note, gratitude, and sleep section. The entries are stored in the Puss in moods tab of the app where you can see all entries orgainzed by most recent to least recent with the option to delete any entry.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
