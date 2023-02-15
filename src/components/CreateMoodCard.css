@@ -59,7 +59,7 @@
     background-color:#523123;
     }
 
-.noteInput {
+.noteInput, .accomplishmentInput, .gratefulInput, .sleepInput {
     color:#523123;
     font-family:'Chicle';
 
