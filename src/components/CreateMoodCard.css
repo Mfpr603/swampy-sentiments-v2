@@ -11,11 +11,12 @@
     align-items: center;
     top: 0;
     left: 0;
+  
   }
 
 .CreateFormContainer{
   width: 700px;
-  height: 700px;
+ /* min-height: fit-content; */
   border-radius: 12px;
   background-color: #c5bc8d;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
