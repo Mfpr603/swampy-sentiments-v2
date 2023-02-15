@@ -84,11 +84,22 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
           <div className= "Date">
             <CurrentDate />
           </div>
-          <div className= "selectedMood">
-                <div className="moodImgBox">
-                  <img className = 'moodImg' src={selectedImg.src} alt={selectedImg.alt} />
-                </div>
-                <div className = "selectedMoodTitle">{selectedMood}</div>
+          <div className = "moodAndSleep">
+            <div className= "selectedMood">
+                  <div className="moodImgBox">
+                    <img className = 'moodImg' src={selectedImg.src} alt={selectedImg.alt} />
+                  </div>
+                  <div className = "selectedMoodTitle">{selectedMood}</div>
+            </div>
+            <div className= "sleepInput">
+                <h1 >Sleep Quality:</h1>
+                <select  className="sleep-select" onChange={handleSleepChange} value={formData.sleep}>
+                <option value="">Please select...</option>
+                {sleepOptions.map((option, index) => (
+                <option key={index} value={option}>{option}</option>
+                ))}
+                </select>
+            </div>
           </div>
 
           <div className= "noteInput">
@@ -113,15 +124,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
           </div>
 
           
-          <div className= "sleepInput">
-              <h1 >Sleep Quality:</h1>
-              <select onChange={handleSleepChange} value={formData.sleep}>
-              <option value="">Please select...</option>
-              {sleepOptions.map((option, index) => (
-              <option key={index} value={option}>{option}</option>
-              ))}
-              </select>
-          </div>
+         
 
 
           <div className = "footer">

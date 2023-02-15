@@ -3,6 +3,8 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
+import { NavBar2 } from "./components/NavBar2";
+
 import PussinMoods from './pages/PussinMoods';
 import SwampyHome from './pages/SwampyHome';
 import WishUpon from './pages/WishUpon';
@@ -11,6 +13,8 @@ import LoginPage from './pages/LoginPage';
 import { useState, useEffect } from "react";
 import { auth } from "./firebase";
 import { User } from 'firebase/auth';
+import Logout from "./components/Logout";
+
 
 
 function App() {
@@ -28,10 +32,23 @@ function App() {
 
   return (
     <div className="App">
+      
       {user !== null && (
+
+        <React.Fragment>
+        <div>
+          <Logout/> 
+        </div>
+
         <div className="navBar">
           <NavBar />
+        
         </div>
+        <div className="navBar2">
+        
+          <NavBar2 />
+        </div>
+        </React.Fragment>
       )}
 
       <Routes>
@@ -41,6 +58,7 @@ function App() {
         <Route path="/pussinmoods" element={<PussinMoods />} />
         <Route path="/gingysgrumpometer" element={<GingysGrumpometer />} />
       </Routes>
+
     </div>
   );
 }

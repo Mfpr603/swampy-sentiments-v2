@@ -16,7 +16,7 @@
 
 .CreateFormContainer{
   width: 700px;
- min-height: fit-content;
+  min-height: fit-content;
   border-radius: 12px;
   background-color: #c5bc8d;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -27,8 +27,9 @@
 }
 
 .closeButton button{
- background-color: transparent;
+  background-color: transparent;
   border: none;
+  color: #f71111;
   font-size: 25px;
   cursor: pointer;
 }
@@ -39,25 +40,27 @@
     
   }
 
-
 .submitButton button {
-    display:inline-block;
-    padding:0.3em 1em;
-    border:0.1em solid #523123;
-    margin:0 0.3em 0.3em 0;
-    border-radius:0.12em;
-    /* box-sizing: border-box; */
-    text-decoration:none;
-    font-family:'Chicle';
-    font-weight:300;
-    color:#523123;
-    text-align:center;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.3em 1em;
+    border: 0.1em solid #523123;
+    border-radius: 0.12em;
+    text-decoration: none;
+    font-family: 'Chicle';
+    font-weight: 300;
+    font-size: 20px;
+    color: #523123;
+    text-align: center;
     transition: all 0.2s;
-}
+    margin-top: 20px;
+  }
+  
 
 .submitButton button:hover{
     color:#D3CCA5;
     background-color:#523123;
+
     }
 
 .noteInput, .accomplishmentInput, .gratefulInput, .sleepInput {
@@ -75,10 +78,12 @@
   }
 
 .textInput input{
-    background-color: #D3CCA5;
-    border: none;
-    outline: none;
-    font-family: Lexend Peta;
+  background-color: #D3CCA5;
+  border: none;
+  outline: none;
+  font-family: Lexend Peta;
+  text-align: center;
+  width: 100%; 
 
 }
 
@@ -93,9 +98,6 @@
   max-width:  140px; 
   max-height: 140px;
   border-radius: 10px;
-  /* border-color: #B0C400;
-  border-width: 10px;
-  border-style: solid; */
   margin-top: 15px;
 }
 
@@ -103,6 +105,30 @@
   font-family: Chicle;
   color: #408A2E;;
   font-size: 30px;
+  margin-left: 30px;
 }
 
 
+.moodAndSleep{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.select.sleepInput {
+    background-color: #408A2E;
+    border: none;
+    outline: none;
+    font-family: Lexend Peta;
+
+
+}
+
+.sleep-select {
+  background-color: #408A2E;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  font-size: 11px;
+  padding: 10px 20px;
+  font-family: Lexend Peta;
+}

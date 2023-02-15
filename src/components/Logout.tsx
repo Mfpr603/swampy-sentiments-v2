@@ -30,10 +30,10 @@ const Logout = () => {
   
 
   return (
-    <div>
-      <h4>User Logged In:</h4>
-      {user && user.displayName ? user.displayName : null}
-      <button onClick={handleLogout}>Sign Out</button>
+    <div className = "LogOutContainer" >
+      <h4 className = "UserLoggedOut"> User Logged In: <div className = "displayName"> { user && user.displayName ? user.displayName : null}</div></h4>
+     
+      <button className = "LogOutButton" onClick={handleLogout}>Sign Out</button>
     </div>
   );
 };

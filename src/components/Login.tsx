@@ -66,13 +66,15 @@ function UserAuth() {
     };
     
     return (
-        <div className="App">
+        <div className="SwampyLogin">
           <Form>
             <h3> {showLogin ? "Login" : "Register User"} </h3>
             {!showLogin && (
               <>
-                <InputGroup className="mb-3">
+                <InputGroup> 
                   <FormControl
+                  
+                 
                     placeholder="Email..."
                     value={registerEmail}
                     onChange={(event) => {
@@ -80,17 +82,20 @@ function UserAuth() {
                     }}
                   />
                 </InputGroup>
-                <InputGroup className="mb-3">
-                  <FormControl
-                    type="password"
-                    placeholder="Password..."
-                    value={registerPassword}
-                    onChange={(event) => {
-                      setRegisterPassword(event.target.value);
-                    }}
-                  />
+              
+
+                <InputGroup>
+                    <FormControl
+                          
+                            type="password"
+                            placeholder="Password..."
+                            value={registerPassword}
+                            onChange={(event) => {
+                            setRegisterPassword(event.target.value);
+                            }}
+                        />
                 </InputGroup>
-                <InputGroup className="mb-3">
+                <InputGroup >
                   <FormControl
                     placeholder="Display Name..."
                     value={registerDisplayName}
@@ -99,7 +104,7 @@ function UserAuth() {
                     }}
                   />
                 </InputGroup>
-                <Button variant="primary" onClick={register}>
+                <Button className="common-button"  variant="primary" onClick={register}>
                   Create User
                 </Button>
               </>
@@ -125,7 +130,7 @@ function UserAuth() {
                     }}
                   />
                 </InputGroup>
-                <Button variant="primary" onClick={login}>
+                <Button className="common-button" variant="primary" onClick={login}>
                   Login
                 </Button>
               </>
@@ -133,7 +138,7 @@ function UserAuth() {
           </Form>
           <Button
             variant="link"
-            className="mt-3"
+            className="common-button"
             onClick={() => setShowLogin(!showLogin)}
           >
             {showLogin ? "Switch to Register" : "Switch to Login"}

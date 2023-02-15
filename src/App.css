@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+.html{
+  background-color: #D3CCA5;
+}
 
 .App{
   background-color: #D3CCA5;
@@ -45,3 +50,52 @@
   font-family: Lexend Peta;
   color: #408A2E;
 }
+
+
+
+
+.greetingHeader{
+  font-family: Lexend Peta;
+  color: #795A2D;
+}
+
+.UserLoggedOut{
+  font-family: Lexend Peta;
+  color: #795A2D;
+  font-size: 15px;
+
+}
+
+.LogOutContainer{
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.displayName{
+  margin-top: 10px;
+  color: #408A2E;
+  margin-left: 40px;
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+
+
+button.LogOutButton{
+  width: 100px;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #a3b315;
+  color: #fff;
+  border: none;
+  font-family: Lexend Peta;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 18px;
+  margin-top: 0px;
+}
+
+button.LogOutButton:hover {
+  background-color: #c3d14d;
+}
+
