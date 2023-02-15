@@ -1,6 +1,50 @@
-# Application description
-This Application is a shrek themed mood tracker website app. The app allows you to create entries everyday by creating an account. Once logged in there is a guided mood entry that allows you to reflect in a note, gratitude, and sleep section. The entries are stored in the Puss in moods tab of the app where you can see all entries orgainzed by most recent to least recent with the option to delete any entry.
+# Swampy Sentiments
 
+## Overview
+This Application is a shrek themed mood tracker.
+
+## Features
+• Account creation and login 
+
+• Guided mood and reflection entries
+
+• Past entires conveniently stored and display from most to least recent
+
+• Delete past entry functionality
+
+• Mental health resources page 
+
+• A statstics page that displays your mood distribution and average sleep quality
+
+
+## Dependencies
+
+• React
+
+• React Bootstrap 
+
+• React Router 
+
+• React-DOM
+
+• HighCharts 
+
+• Typescript 
+
+## Future Enhancements 
+
+• Add an update functionality for past entries
+
+• Spotify song selection that reflects emotions for the day
+
+
+
+
+## Contributors 
+
+ • Aisha Husseini
+ 
+ • Maria Fernanda Perez Rojo
 
 
 
