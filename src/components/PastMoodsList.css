@@ -13,9 +13,16 @@
 }
 
 .moodImg{
-max-width:  140px; 
+  max-width:  140px; 
   max-height: 140px;
   border-radius: 10px;
+  margin-right: 20px;
+}
+
+.PussinMoods{
+  font-family: Chicle;
+  font-size: 40px;
+  color: #523123;
 }
 
 
@@ -38,7 +45,7 @@ max-width:  140px;
   font-family:'Chicle';
   font-weight:300;
   color:#523123;
-  text-align:center;
+  text-align:right;
   transition: all 0.2s;
 }
 
@@ -53,4 +60,63 @@ max-width:  140px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.noteAndSleep{
+  display: flex;
+  align-items: center;
+  display: table-row;
+  justify-content: center;
+
+}
+
+
+.dateContainer{
+  font-family: Lexend Peta;
+  color: #795A2D;
+}
+
+.moodSelectionTitle{
+  font-family: Chicle;
+  color: #523123;
+  font-size: 25px;
+  margin-left: 35px ;
+  margin-top: 10px;
+
+}
+
+.Cardtext{
+  font-family: Lexend Peta;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.Cardtext2{
+  font-family: Lexend Peta;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.bottomContainer{
+
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.AccomplishmentAndGrateful{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.dateAndMoodContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteButtonContainer{
+  display: flex;
+  flex-direction: row-reverse;
 }

@@ -45,24 +45,44 @@ const PastMoodsList = () => {
         <React.Fragment key={index}>
           <div className="cardsContainer">
             <div className="entryFormContainer">
+              <div className="dateAndMoodContainer">
               <div className="dateContainer">
-                {entry.date && <p>Date: {entry.date}</p>}
-              </div>
-                
-              <div className="moodSelectionContainer">
-                {entry.image && <img className="moodImg" src={entry.image.src} alt={entry.image.alt} />}
-                {entry.mood && <p>{entry.mood}</p>}
-              </div>
+                {entry.date && <p>{entry.date}</p>}
+                <div className = "noteAndSleep">
+                <div className="noteContainer">
+                  {entry.note && <p className = "Cardtext" >Note: {entry.note}</p>}
+                  </div>
 
-              {entry.note && <p>Note: {entry.note}</p>}
-              {entry.BiggestAccomplishment && <p>Biggest Accomplishment: {entry.BiggestAccomplishment}</p>}
-              {entry.Grateful && <p>I'm grateful for: {entry.Grateful}</p>}
-              {entry.sleep && <p>Sleep Quality: {entry.sleep}</p>}
+                <div className="sleepContainer">
+                  {entry.sleep && <p className = "Cardtext" >Sleep Quality: {entry.sleep}</p>}
+                </div>
+              </div>
+              </div>
+              <div className="moodSelectionContainer">
+                  {entry.image && <img className="moodImg" src={entry.image.src} alt={entry.image.alt} />}
+                  {entry.mood && <p className = "moodSelectionTitle">{entry.mood}</p>}
+
+                </div>
+                </div>
               
-              {entry.id && <button className="deleteButton">
-  <DeleteButton postID={entry.id} />
-</button>}
+               
+                
+           
+              
+              <div className = "bottomContainer">
+              <div className="AccomplishmentAndGrateful">
+              {entry.BiggestAccomplishment && <p className = "Cardtext" >Biggest Accomplishment: {entry.BiggestAccomplishment}</p>}
+              {entry.Grateful && <p className = "Cardtext" >I'm grateful for: {entry.Grateful}</p>}
+              </div>
+              
+              
             </div>
+            <div className = "deleteButtonForm">
+            {entry.id && <button className="deleteButton">
+               <DeleteButton postID={entry.id} />
+              </button>}
+            </div>
+          </div>
           </div>
         </React.Fragment>
       ))}

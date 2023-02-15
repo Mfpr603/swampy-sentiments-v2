@@ -17,7 +17,7 @@ interface CreateMoodCardProps {
 
 function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCardProps): JSX.Element {
   
-   {
+  {
     
   const db = getDatabase(app);
 
@@ -69,7 +69,7 @@ function CreateMoodCard({ closeModal, selectedMood, selectedImg }: CreateMoodCar
     }
     var newPostRef = push(entryRef, entry);
     var postID = newPostRef.key;
-    // console.log(postID); // Use set instead of push to set the value at the key
+    console.log(postID); // Use set instead of push to set the value at the key
   };}
 
 // console.log(formData)
