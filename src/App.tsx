@@ -40,10 +40,10 @@ function App() {
           <Logout/> 
         </div>
 
-        <div className="navBar">
+        {/* <div className="navBar">
           <NavBar />
         
-        </div>
+        </div> */}
         <div className="navBar2">
         
           <NavBar2 />

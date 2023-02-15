@@ -8,14 +8,16 @@ export const NavBar = () => {
       <Container>
         
         <Navbar.Collapse id="responsive-navbar-nav">
+        <div className = "linkIMG">
           <Nav>
+          
             <Link to="/"> 
                       <img
                       className='shrekHead'
                       src={process.env.PUBLIC_URL + "/assets/shrekHead.png"}
                       alt="shrekHead"
                       />          
-    </Link>
+            </Link>
             <Link to="pussinmoods"> <img
                     className='pussInMoods'
                     src={process.env.PUBLIC_URL + "/assets/PussInBoots.png"}
@@ -32,12 +34,13 @@ export const NavBar = () => {
                     src={process.env.PUBLIC_URL + "/assets/gingy.png"}
                     alt="gingy"
                     />
-     </Link>
-            
+            </Link>
+     
 
             
 
           </Nav>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
