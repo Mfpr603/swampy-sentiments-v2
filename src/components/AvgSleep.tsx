@@ -39,8 +39,8 @@ const AvgSleep = () => {
   
     return (
       <div>
-        <h1>Average Sleep Quality:</h1>
-        <h2>{sleepData.averageSleep}</h2>
+        <h1 className = "AvgSleepText" >Average Sleep Quality:</h1>
+        <h2 className= "AvgNum">{sleepData.averageSleep}</h2>
       </div>
     );
   };

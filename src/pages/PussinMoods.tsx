@@ -8,7 +8,7 @@ export default function PussinMoods() {
         </h1>
         <h2>
         <PastMoodsList/>
-       {/* lol just adding a comment */}
+       
         </h2>
       </div>
     );

@@ -4,7 +4,7 @@ import AvgSleep from '../components/AvgSleep';
 export default function GingysGrumpometer() {
     return (
       <div>
-        <h1>Mood Distribution</h1>
+        <h1 className = "MDtext">Mood Distribution</h1>
         <MoodDistributionChart/>
         <AvgSleep/>
 

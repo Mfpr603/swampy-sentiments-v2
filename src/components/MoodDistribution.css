@@ -4,3 +4,16 @@
     fill: #D3CCA5;
 }
 
+.AvgSleepText, .MDtext{
+    font-family: Chicle;
+    font-size: 40px;
+    color: #408A2E;
+}
+
+.AvgNum{
+    text-align: center;
+    font-family: Lexend Peta;
+    font-size: 30px;
+    margin-bottom: 100px;
+    color:#523123
+}

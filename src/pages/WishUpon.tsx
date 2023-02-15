@@ -29,6 +29,9 @@ export default function WishUpon() {
 
         </div>
 
+        <h2 className = "ResourcesTitle"> Resources</h2>
+
+      <div className='Resources'>
       <p className='mentalHealth'>
         BetterHelp: <a href="url">https://www.betterhelp.com/</a>
       </p>
@@ -39,9 +42,9 @@ export default function WishUpon() {
       <p className='mentalHealth'>
       In crisis and need to talk to someone?
       Text HOME to 741741 to reach a volunteer Crisis Counselor.
-
-
       </p>
+
+      </div>
 
       <h1 className='notAlone'>You're not alone</h1>
       <img
