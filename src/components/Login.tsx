@@ -67,14 +67,15 @@ function UserAuth() {
     
     return (
         <div className="SwampyLogin">
+          <h1 className="SwampyLoginHeader">The swamp awaits. . .</h1>
+          <div className = "SwampyLoginForm">
           <Form>
-            <h3> {showLogin ? "Login" : "Register User"} </h3>
+            <h3 className = "LoginText"> {showLogin ? "Login" : "Register User"} </h3>
             {!showLogin && (
               <>
-                <InputGroup> 
+                <h1 className = "Ltext">Email</h1>
+                <InputGroup className = "emailInput"> 
                   <FormControl
-                  
-                 
                     placeholder="Email..."
                     value={registerEmail}
                     onChange={(event) => {
@@ -83,10 +84,9 @@ function UserAuth() {
                   />
                 </InputGroup>
               
-
-                <InputGroup>
+                <h1 className = "Ltext">Password</h1>
+                <InputGroup className = "passwordInput">
                     <FormControl
-                          
                             type="password"
                             placeholder="Password..."
                             value={registerPassword}
@@ -95,7 +95,8 @@ function UserAuth() {
                             }}
                         />
                 </InputGroup>
-                <InputGroup >
+                <h1 className = "Ltext">Name</h1>
+                <InputGroup className = "displayNameInput" >
                   <FormControl
                     placeholder="Display Name..."
                     value={registerDisplayName}
@@ -104,14 +105,17 @@ function UserAuth() {
                     }}
                   />
                 </InputGroup>
-                <Button className="common-button"  variant="primary" onClick={register}>
+                <div className="registerButton">
+                <Button   variant="primary" onClick={register}>
                   Create User
                 </Button>
+                </div>
               </>
             )}
             {showLogin && (
               <>
-                <InputGroup className="mb-3">
+              <h1 className = "Ltext">Email</h1>
+                <InputGroup className="emailInput">
                   <FormControl
                     placeholder="Email..."
                     value={loginEmail}
@@ -120,7 +124,8 @@ function UserAuth() {
                     }}
                   />
                 </InputGroup>
-                <InputGroup className="mb-3">
+                <h1 className = "Ltext">Password</h1>
+                <InputGroup className="passwordInput">
                   <FormControl
                     type="password"
                     placeholder="Password..."
@@ -130,19 +135,24 @@ function UserAuth() {
                     }}
                   />
                 </InputGroup>
-                <Button className="common-button" variant="primary" onClick={login}>
+                <div className="LoginButton">
+                <Button  variant="primary" onClick={login}>
                   Login
                 </Button>
+                </div>
               </>
             )}
           </Form>
+          <div className="ToggleButton">
           <Button
             variant="link"
-            className="common-button"
+            
             onClick={() => setShowLogin(!showLogin)}
           >
             {showLogin ? "Switch to Register" : "Switch to Login"}
           </Button>
+          </div>
+        </div>
         </div>
       );
                 }    

@@ -57,7 +57,7 @@
   }
   
 
-.submitButton button:hover{
+.submitButton button:hover, .LoginButton button:hover, .ToggleButton button:hover, .registerButton button:hover{
     color:#D3CCA5;
     background-color:#523123;
 
