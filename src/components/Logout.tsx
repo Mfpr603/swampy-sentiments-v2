@@ -33,7 +33,7 @@ const Logout = () => {
     <div className = "LogOutContainer" >
       <h4 className = "UserLoggedOut"> User Logged In: <div className = "displayName"> { user && user.displayName ? user.displayName : null}</div></h4>
      
-      <button className = "LogOutButton" onClick={handleLogout}>Sign Out</button>
+      <button className = "LogOutButton" onClick={handleLogout}>Get out me swamp!</button>
     </div>
   );
 };

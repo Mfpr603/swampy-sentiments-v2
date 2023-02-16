@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { ImgNavBar }  from './NavBar'; 
 
 export const NavBar2 = () => {
   return (
@@ -8,8 +9,12 @@ export const NavBar2 = () => {
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
-            <div className = "links">
+        <div className = "imgNavBar">
+        <ImgNavBar />
+        </div>
+          
+          
+            <div className = "links"> 
             <Link to="/"> Swampy Home           
             </Link>
             <Link to="pussinmoods">Puss in Moods 
@@ -23,7 +28,7 @@ export const NavBar2 = () => {
 
             
 
-          </Nav>
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>

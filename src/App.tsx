@@ -2,7 +2,6 @@ import React from 'react';
 
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
 import { NavBar2 } from "./components/NavBar2";
 
 import PussinMoods from './pages/PussinMoods';
@@ -40,10 +39,7 @@ function App() {
           <Logout/> 
         </div>
 
-        {/* <div className="navBar">
-          <NavBar />
         
-        </div> */}
         <div className="navBar2">
         
           <NavBar2 />
@@ -59,7 +55,13 @@ function App() {
         <Route path="/gingysgrumpometer" element={<GingysGrumpometer />} />
       </Routes>
 
+      <footer>
+      <p className = "CopyRight">  "All rights reserved, just like Fiona's heart" - © Shrek</p>
+    </footer>
+
     </div>
+
+    
   );
 }
 

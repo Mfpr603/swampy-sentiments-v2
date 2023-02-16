@@ -7,6 +7,7 @@
 
 .App{
   background-color: #D3CCA5;
+  height : '100%'
 }
 
 .currentDate {
@@ -83,7 +84,7 @@
 
 
 button.LogOutButton{
-  width: 100px;
+  width: 200px;
   height: 50px;
   padding: 10px;
   margin-top: 20px;
@@ -112,6 +113,9 @@ button.LogOutButton:hover {
 }
 
 
+
+
+
 .links :hover{
   color: #3e4310;
   
@@ -126,4 +130,20 @@ a {
 a :hover {
   text-decoration: none;
   color: #c3d14d;
+}
+
+.navbar-nav {
+
+  display: flex ;
+  justify-content: space-around;
+
+}
+
+.CopyRight{
+
+  font-family: Lexend Peta;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Lexend Peta;
 }
