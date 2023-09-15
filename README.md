@@ -4,8 +4,7 @@
 This Application is a shrek themed mood tracker.
 
 ## Live Website
-https://swampy-sentiments.herokuapp.com
-*currently offline*
+https://swampy-sentiments.herokuapp.com *currently offline*
 
 ## Features
 • Account creation and login 
