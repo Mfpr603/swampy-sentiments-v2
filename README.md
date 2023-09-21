@@ -11,13 +11,13 @@ https://swampy-sentiments.herokuapp.com *currently offline*
 
 • Guided mood and reflection entries
 
-• Past entires conveniently stored and display from most to least recent
+• Past entries conveniently stored and displayed from most to least recent
 
 • Delete past entry functionality
 
 • Mental health resources page 
 
-• A statstics page that displays your mood distribution and average sleep quality
+• A statistics page that displays your mood distribution and average sleep quality
 
 
 ## Dependencies
